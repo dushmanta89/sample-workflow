@@ -4,7 +4,6 @@ on: push
 
 env:
   SUBSCRIBE: Subscribe #custom env variable
-  GITHUB: ${{}}
 
 jobs:
   Subscribe-my-channel:
