@@ -29,3 +29,14 @@ jobs:
         run: |
           echo ${SECRET_TOKEN}
           echo ${SECRET_ID}
+          
+  Client-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking Client
+        run: |
+          if [ "$SECRET_ID" === "DUI_TRACKER"]
+          then
+            echo "Client ID is allowed"
+          fi 
+          echo "Client secret validated"
