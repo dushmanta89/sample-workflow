@@ -1,0 +1,16 @@
+name: Custom env variables
+
+on: push
+
+env:
+  SUBSCRIBE: Subscribe
+
+jobs:
+  Subscribe-my-channel:
+    runs-on: ubuntu-latest
+    env:
+      LIKE: Please like share
+      CHANNEL: Dushmanta 
+    steps:
+      - name: "Please like share and Subscribe"
+        run: echo "$LIKE and $SUBSCRIBE $CHANNEL"
