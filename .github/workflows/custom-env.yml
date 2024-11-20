@@ -6,6 +6,18 @@ env:
   SUBSCRIBE: Subscribe #custom env variable
 
 jobs:
+  Decrypt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: DecryptFile
+        env:
+          SECRET_PASSPHRASE: ${{ secrets.SECRET_PASSPHRASE }}
+        run: gpg --quiet --batch --yes --decrypt --passphrase="$SECRET_PASSPHRASE" --output $HOME/index.php index.php.gpg
+
+      - name: Print out file content
+        run: cat $HOME/index.php
+        
   Subscribe-my-channel:
     runs-on: ubuntu-latest
     env:
