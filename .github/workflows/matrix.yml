@@ -1,4 +1,4 @@
-name: Custom env variables
+name: Chceck Node Version Setpu
 
 on: push
 
@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: Node version
         run: node -v
-      - uses: actions/setup-node@1
+      - uses: actions/setup-node@v4
         with:
           node-version: 8
       - name: check version post setup
