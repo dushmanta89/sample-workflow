@@ -3,13 +3,17 @@ name: Chceck Node Version Setpu
 on: push
 
 jobs:
-  Decrypt:
+  NodeVersions:
+    strategy:
+      matrix:
+        node-version: [7,8,9]
     runs-on: ubuntu-latest
     steps:
       - name: Node version
         run: node -v
       - uses: actions/setup-node@v4
         with:
-          node-version: 8
-      - name: check version post setup
+          node-version: ${{ matrx.node-version }}
+          
+      - name: Check version post setup
         run: node -v
