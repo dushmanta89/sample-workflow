@@ -1,0 +1,15 @@
+name: Custom env variables
+
+on: push
+
+jobs:
+  Decrypt:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Node version
+        run: node -v
+      - uses: actions/setup-node@1
+        with:
+          node-version: 8
+      - name: check version post setup
+        run: node -v
