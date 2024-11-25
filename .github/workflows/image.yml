@@ -12,10 +12,10 @@ jobs:
 
       - name: Configure AWS
         uses: aws-actions/configure-aws-credentials@v1
-        env:
-          AWS_USER_ACCESS_KEY: ${{ secrets.AWS_USER_ACCESS_KEY }}
-          AWS_USER_ACCESS_SECRET: ${{ secrets.AWS_USER_ACCESS_SECRET }}
-          AWS_REGION: ap-south-1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_USER_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_USER_ACCESS_SECRET }}
+          aws-region: ap-south-1
 
       - name: Login to AWS ECR
         id: loginEcr
