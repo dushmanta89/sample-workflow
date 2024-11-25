@@ -15,7 +15,7 @@ jobs:
 
         exclude: 
           - os: ubuntu-latest
-            node-version: [7,8]
+            node-version: [7,8] # check if the exclude taking list as inputs
           - os: macos-latest
             node-version: [7,9]
 
